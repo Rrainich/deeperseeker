@@ -68,7 +68,7 @@ cp .env.example .env
 
 ### 方式一——预构建镜像（ghcr.io，amd64 + arm64，推荐）
 
-镜像**只由 CI 构建**（`.github/workflows/release.yml`）——不在本地构建，也不手动构建。版本只有一个来源：`pyproject.toml`（当前为 `version = "6.0"`）。发布流程：改动该字段，推送对应的 `v<版本>` 标签（此处即 `v6.0`）——若标签与 `pyproject.toml` 不一致，工作流会拒绝构建，一致则发布多架构（amd64 + arm64）镜像。拉取即用，无需克隆仓库：
+镜像**只由 CI 构建**（`.github/workflows/release.yml`）——不在本地构建，也不手动构建。版本只有一个来源：`pyproject.toml`（当前为 `version = "7.0"`）。发布流程：改动该字段，推送对应的 `v<版本>` 标签（此处即 `v7.0`）——若标签与 `pyproject.toml` 不一致，工作流会拒绝构建，一致则发布多架构（amd64 + arm64）镜像。拉取即用，无需克隆仓库：
 
 ```bash
 export DEEPSEEKER_ADMIN_PASSWORD='设置一个真实密码'   # P0-8 拒绝在对外暴露时使用 admin/admin

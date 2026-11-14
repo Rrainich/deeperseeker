@@ -85,7 +85,7 @@ Set at minimum `DEEPSEEKER_ADMIN_PASSWORD` in that file — [Security defaults](
 
 ### Option 1 — Prebuilt image (ghcr.io, amd64 + arm64) — recommended
 
-Images are **built only by CI** (`.github/workflows/release.yml`) — never locally, never by hand. The version has one source: `pyproject.toml` (`version = "6.0"` today). A release is: bump that field, push the matching `v<version>` tag (here `v6.0`) — the workflow refuses to build if the tag and `pyproject.toml` disagree, then publishes a multi-arch (amd64 + arm64) image. Pull-and-run, no repo clone needed:
+Images are **built only by CI** (`.github/workflows/release.yml`) — never locally, never by hand. The version has one source: `pyproject.toml` (`version = "7.0"` today). A release is: bump that field, push the matching `v<version>` tag (here `v7.0`) — the workflow refuses to build if the tag and `pyproject.toml` disagree, then publishes a multi-arch (amd64 + arm64) image. Pull-and-run, no repo clone needed:
 
 ```bash
 export DEEPSEEKER_ADMIN_PASSWORD='pick-a-real-password'   # P0-8 refuses admin/admin on exposed binds
@@ -95,6 +95,7 @@ docker run -d --name deeperseeker -p 4000:4000 \
 ```
 
 Prefer pinning the digest you verified over a moving tag:
+# (use the newest published tag — the releases list is the source of truth)
 
 ```bash
 docker pull ghcr.io/amancode22/deeperseeker:6.0 \
