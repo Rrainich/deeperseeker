@@ -74,6 +74,7 @@
                 <th>Alias</th>
                 <th>State</th>
                 <th>In-flight</th>
+                <th>Rate (60 s)</th>
                 <th>Last used</th>
                 <th>Cooldown</th>
                 <th>Actions</th>
@@ -89,6 +90,7 @@
                     <div class="state-note">{{ tok['state_note'] }}</div>
                 </td>
                 <td>{{ tok['in_flight'] }}</td>
+                <td>{{ tok['rate_used'] }}{% if tok['rate_limit'] %} / {{ tok['rate_limit'] }}{% if tok['rate_streak'] %} · 429 x{{ tok['rate_streak'] }}{% endif %}{% endif %}</td>
                 <td>{{ tok['last_used'] }}</td>
                 <td>{{ tok['cooldown'] }}</td>
                 <td>
